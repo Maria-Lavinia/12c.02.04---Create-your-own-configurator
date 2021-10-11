@@ -1,0 +1,23 @@
+#Layer_0_Image,
+#Layer_5_Image {
+  pointer-events: none;
+}
+.color-selector-body,
+.color-selector-eyes,
+.color-selector-paws,
+.color-selector-nose {
+  width: 5vw;
+  height: 5vw;
+}
+#colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1vw;
+}
+body {
+  display: flex;
+  flex-direction: row;
+}
+#svgloc {
+  width: 50%;
+}
