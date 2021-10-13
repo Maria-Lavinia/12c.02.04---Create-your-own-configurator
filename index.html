@@ -4,47 +4,99 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
     <title>Bear Configurator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- <header>
+      <p>alllallllaalalalaalal lalalallalaal</p>
+    </header> -->
+    <div id="product-preview">
+      <img src="hat1.png" alt="" class="hat1 hide" data-feature="hat1" />
+      <img src="hat2.png" alt="" class="hat1 hide" data-feature="hat2" />
+      <img src="hat3.png" alt="" class="hat1 hide" data-feature="hat3" />
+      <img src="bow1.png" alt="" class="bow hide" data-feature="bow1" />
+      <img src="bow2.png" alt="" class="bow hide" data-feature="bow2" />
+      <img src="bow3.png" alt="" class="bow hide" data-feature="bow3" />
+      <img src="glasses1.png" alt="" class="glasses hide" data-feature="glasses1" />
+      <img src="glasses2.png" alt="" class="glasses hide" data-feature="glasses2" />
+      <img src="glasses3.png" alt="" class="glasses hide" data-feature="glasses3" />
+    </div>
+    <div id="table">
+      <img src="table.png" alt="table" />
+    </div>
     <div id="svgloc"></div>
+    <div id="options">
+      <h1 id="featurestitle">Available features:</h1>
+      <figure class="option" data-feature="hat1">
+        <img src="hat1.png" alt="hat1" />
+      </figure>
+      <figure class="option" data-feature="hat2">
+        <img src="hat2.png" alt="hat2" />
+      </figure>
+      <figure class="option" data-feature="hat3">
+        <img src="hat3.png" alt="hat3" />
+      </figure>
+      <figure class="option" data-feature="bow1">
+        <img src="bow1.png" alt="bow1" />
+      </figure>
+      <figure class="option" data-feature="bow2">
+        <img src="bow2.png" alt="bow2" />
+      </figure>
+      <figure class="option" data-feature="bow3">
+        <img src="bow3.png" alt="bow3" />
+      </figure>
+      <figure class="option" data-feature="glasses1">
+        <img src="glasses1.png" alt="glasses1" />
+      </figure>
+      <figure class="option" data-feature="glasses2">
+        <img src="glasses2.png" alt="glasses2" />
+      </figure>
+      <figure class="option" data-feature="glasses3">
+        <img src="glasses3.png" alt="glasses2" />
+      </figure>
+      <div id="rectangle"></div>
+    </div>
     <div id="colors">
       <div id="bodycolors">
-        <h1>Body Colors:</h1>
-        <div class="color-selector-body" style="background-color: #ebca99"></div>
-        <div class="color-selector-body" style="background-color: #f5a6ba"></div>
-        <div class="color-selector-body" style="background-color: #9387de"></div>
-        <div class="color-selector-body" style="background-color: #baeb83"></div>
-        <div class="color-selector-body" style="background-color: #9af5eb"></div>
+        <h1>Body:</h1>
+        <div class="color-selector-body" style="background-color: #f2d9bb"></div>
+        <div class="color-selector-body" style="background-color: #d9d6d2"></div>
+        <div class="color-selector-body" style="background-color: #a67051"></div>
+        <div class="color-selector-body" style="background-color: #f2b28d"></div>
+        <div class="color-selector-body" style="background-color: #a64521"></div>
       </div>
       <div id="eyecolors">
-        <h1>Eyes Colors:</h1>
+        <h1>Eyes:</h1>
 
         <div class="color-selector-eyes" style="background-color: #914113"></div>
         <div class="color-selector-eyes" style="background-color: #e97d3f"></div>
         <div class="color-selector-eyes" style="background-color: #8985e0"></div>
-        <div class="color-selector-eyes" style="background-color: #179100"></div>
-        <div class="color-selector-eyes" style="background-color: #4ae32d"></div>
+        <div class="color-selector-eyes" style="background-color: #89d9c3"></div>
+        <div class="color-selector-eyes" style="background-color: #367362"></div>
       </div>
       <div id="nosecolors">
-        <h1>Nose Colors:</h1>
+        <h1>Nose:</h1>
 
-        <div class="color-selector-nose" style="background-color: #914113"></div>
-        <div class="color-selector-nose" style="background-color: red"></div>
-        <div class="color-selector-nose" style="background-color: brown"></div>
-        <div class="color-selector-nose" style="background-color: pink"></div>
-        <div class="color-selector-nose" style="background-color: #e9c53f"></div>
+        <div class="color-selector-nose" style="background-color: #a6122d"></div>
+        <div class="color-selector-nose" style="background-color: #f2bb77"></div>
+        <div class="color-selector-nose" style="background-color: #f28f38"></div>
+        <div class="color-selector-nose" style="background-color: #8c3503"></div>
+        <div class="color-selector-nose" style="background-color: #d9631e"></div>
       </div>
       <div id="pawscolors">
-        <h1>Paws Colors:</h1>
+        <h1>Paws:</h1>
 
-        <div class="color-selector-paws" style="background-color: green"></div>
-        <div class="color-selector-paws" style="background-color: yellow"></div>
-        <div class="color-selector-paws" style="background-color: pink"></div>
-        <div class="color-selector-paws" style="background-color: #914113"></div>
-        <div class="color-selector-paws" style="background-color: #e97d3f"></div>
+        <div class="color-selector-paws" style="background-color: #5b7ba6"></div>
+        <div class="color-selector-paws" style="background-color: #cedef2"></div>
+        <div class="color-selector-paws" style="background-color: #402309"></div>
+        <div class="color-selector-paws" style="background-color: #bf8756"></div>
+        <div class="color-selector-paws" style="background-color: #a65a49"></div>
       </div>
+    </div>
+    <div id="selected">
+      <ul></ul>
     </div>
     <script src="script.js"></script>
   </body>
