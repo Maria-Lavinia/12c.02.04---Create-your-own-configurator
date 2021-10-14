@@ -18,7 +18,7 @@ const features = {
 };
 function screen() {
   document.querySelector("#screen").classList.remove("hidden");
-  document.querySelector("button").addEventListener("click", hidescreen);
+  document.querySelector(".buttonscreen").addEventListener("click", hidescreen);
   function hidescreen() {
     document.querySelector("#screen").classList.add("hidden");
   }
@@ -341,4 +341,8 @@ function init() {
       //   console.log(nosecolor);
     });
   });
+}
+document.querySelector(".reset").addEventListener("click", reset);
+function reset() {
+  location.reload();
 }

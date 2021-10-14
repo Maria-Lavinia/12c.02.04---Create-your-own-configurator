@@ -161,25 +161,25 @@ header {
   left: 11.6vw;
   top: 4vw;
   width: 13vw;
-  height: 17vw;
+  height: 15vw;
   pointer-events: none;
 }
 
 .glasses2 {
   position: absolute;
   left: 9.3vw;
-  top: 5vw;
+  top: 7vw;
   width: 18vw;
-  height: 17vw;
+  height: 13vw;
   pointer-events: none;
 }
 
 .glasses3 {
   position: absolute;
   left: 10.5vw;
-  top: 6vw;
+  top: 8vw;
   width: 15vw;
-  height: 12vw;
+  height: 10vw;
   pointer-events: none;
 }
 #product-preview {
@@ -331,7 +331,7 @@ header {
     transform: rotate(10deg);
   }
 }
-button {
+.buttonscreen {
   position: absolute;
   top: 33vw;
   left: 20vw;
@@ -343,6 +343,23 @@ button {
   font-weight: 900;
   font-family: "Archivo Narrow", sans-serif;
   font-size: 1.3vw;
+  cursor: pointer;
+}
+.reset {
+  position: absolute;
+  top: 43vw;
+  left: 80vw;
+  width: 12vw;
+  height: 4.5vw;
+  margin: auto;
+  border: solid #8c613b;
+  background-color: transparent;
+  padding: 1vw;
+  border-radius: 1vw;
+  color: #8c613b;
+  font-weight: 900;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 1.5vw;
   cursor: pointer;
 }
 button:hover {
