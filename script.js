@@ -1,6 +1,6 @@
 "use strict";
 
-window.addEventListener("DOMContentLoaded", start);
+window.addEventListener("DOMContentLoaded", screen);
 let body;
 let eyes;
 let nose;
@@ -16,6 +16,14 @@ const features = {
   glasses2: false,
   glasses3: false,
 };
+function screen() {
+  document.querySelector("#screen").classList.remove("hidden");
+  document.querySelector("button").addEventListener("click", hidescreen);
+  function hidescreen() {
+    document.querySelector("#screen").classList.add("hidden");
+  }
+  start();
+}
 async function start() {
   let response = await fetch("bear-white-01.svg");
   let mySvgData = await response.text();
@@ -132,13 +140,16 @@ function init() {
   setColor(paws, pawscolor);
   setColor(nose, nosecolor);
 
-  body.addEventListener("click", (event) => {
+  body.addEventListener("mousedown", (event) => {
     setColor(event.target, bodycolor);
     console.log("I pressed body");
     if (chosen === false) {
-      event.target.style.stroke = "black";
+      event.target.style.stroke = "#5e3d2a";
 
       event.target.style.strokeWidth = "3px";
+      event.target.style.animation = "none";
+      event.target.style.strokeDasharray = "0";
+
       chosen = true;
       console.log(chosen);
       other = event.target;
@@ -146,7 +157,7 @@ function init() {
     } else {
       if (event.target != other) {
         other.style.stroke = "";
-        event.target.style.stroke = "black";
+        event.target.style.stroke = "#5e3d2a";
         event.target.style.strokeWidth = "3px";
         other = event.target;
       }
@@ -159,16 +170,18 @@ function init() {
     // document.querySelector("#nosecolors").style.filter = "grayscale(100%)";
     // document.querySelector("#pawscolors").style.filter = "grayscale(100%)";
   });
-  eyes.addEventListener("click", (event) => {
+  eyes.addEventListener("mousedown", (event) => {
     setColor(event.target, eyescolor);
     console.log("I pressed eyes");
 
     console.log(other);
     console.log(chosen);
     if (chosen === false) {
-      event.target.style.stroke = "black";
+      event.target.style.stroke = "#5e3d2a";
 
       event.target.style.strokeWidth = "3px";
+      event.target.style.animation = "none";
+      event.target.style.strokeDasharray = "0";
       chosen = true;
       console.log(chosen);
       other = event.target;
@@ -176,7 +189,7 @@ function init() {
     } else {
       if (event.target != other) {
         other.style.stroke = "";
-        event.target.style.stroke = "black";
+        event.target.style.stroke = "#5e3d2a";
         event.target.style.strokeWidth = "3px";
         other = event.target;
       }
@@ -190,15 +203,17 @@ function init() {
     // document.querySelector("#nosecolors").style.filter = "grayscale(100%)";
     // document.querySelector("#pawscolors").style.filter = "grayscale(100%)";
   });
-  nose.addEventListener("click", (event) => {
+  nose.addEventListener("mousedown", (event) => {
     setColor(event.target, nosecolor);
     console.log("I pressed nose");
     console.log(other);
     console.log(chosen);
     if (chosen === false) {
-      event.target.style.stroke = "black";
+      event.target.style.stroke = "#5e3d2a";
 
       event.target.style.strokeWidth = "3px";
+      event.target.style.animation = "none";
+      event.target.style.strokeDasharray = "0";
       chosen = true;
       console.log(chosen);
       other = event.target;
@@ -206,21 +221,25 @@ function init() {
     } else {
       if (event.target != other) {
         other.style.stroke = "";
-        event.target.style.stroke = "black";
+        event.target.style.stroke = "#5e3d2a";
         event.target.style.strokeWidth = "3px";
+        event.target.style.animation = "none";
+        event.target.style.strokeDasharray = "0";
         other = event.target;
       }
     }
   });
-  paws.addEventListener("click", (event) => {
+  paws.addEventListener("mousedown", (event) => {
     setColor(event.target, pawscolor);
     console.log("I pressed paws");
     console.log(other);
     console.log(chosen);
     if (chosen === false) {
-      event.target.style.stroke = "black";
+      event.target.style.stroke = "#5e3d2a";
 
       event.target.style.strokeWidth = "3px";
+      event.target.style.animation = "none";
+      event.target.style.strokeDasharray = "0";
       chosen = true;
       console.log(chosen);
       other = event.target;
@@ -228,17 +247,31 @@ function init() {
     } else {
       if (event.target != other) {
         other.style.stroke = "";
-        event.target.style.stroke = "black";
+        event.target.style.stroke = "#5e3d2a";
         event.target.style.strokeWidth = "3px";
         other = event.target;
       }
     }
   });
   let bodycolors = document.querySelectorAll(".color-selector-body");
+  let chosencolor = false;
+  let othercolor;
   bodycolors.forEach((element) => {
     element.addEventListener("click", (event) => {
+      console.log(event.target);
       bodycolor = event.target.style.backgroundColor;
-
+      console.log("I setted the color for body");
+      if (chosencolor === false) {
+        event.target.style.border = "solid #5e3d2a 3px";
+        chosencolor = true;
+        othercolor = event.target;
+      } else {
+        if (event.target != othercolor) {
+          othercolor.style.border = "";
+          event.target.style.border = "solid #5e3d2a 3px";
+          othercolor = event.target;
+        }
+      }
       //   console.log()
       //   event.target.style.stroke = "black";
       //   body.style.fill = event.target.style.backgroundColor;
@@ -250,6 +283,18 @@ function init() {
   document.querySelectorAll(".color-selector-eyes").forEach((element) => {
     element.addEventListener("click", (event) => {
       eyescolor = event.target.style.backgroundColor;
+      console.log("I setted the color for eyes");
+      if (chosencolor === false) {
+        event.target.style.border = "solid #5e3d2a 3px";
+        chosencolor = true;
+        othercolor = event.target;
+      } else {
+        if (event.target != othercolor) {
+          othercolor.style.border = "";
+          event.target.style.border = "solid #5e3d2a 3px";
+          othercolor = event.target;
+        }
+      }
       //   eyes.style.fill = event.target.style.backgroundColor;
       //   eyes.style.fill = event.target.style.backgroundColor;
 
@@ -259,6 +304,17 @@ function init() {
   document.querySelectorAll(".color-selector-nose").forEach((element) => {
     element.addEventListener("click", (event) => {
       nosecolor = event.target.style.backgroundColor;
+      if (chosencolor === false) {
+        event.target.style.border = "solid #5e3d2a 3px";
+        chosencolor = true;
+        othercolor = event.target;
+      } else {
+        if (event.target != othercolor) {
+          othercolor.style.border = "";
+          event.target.style.border = "solid #5e3d2a 3px";
+          othercolor = event.target;
+        }
+      }
       //   nose.style.fill = event.target.style.backgroundColor;
       //   eyes.style.fill = event.target.style.backgroundColor;
 
@@ -268,6 +324,17 @@ function init() {
   document.querySelectorAll(".color-selector-paws").forEach((element) => {
     element.addEventListener("click", (event) => {
       pawscolor = event.target.style.backgroundColor;
+      if (chosencolor === false) {
+        event.target.style.border = "solid #5e3d2a 3px";
+        chosencolor = true;
+        othercolor = event.target;
+      } else {
+        if (event.target != othercolor) {
+          othercolor.style.border = "";
+          event.target.style.border = "solid #5e3d2a 3px";
+          othercolor = event.target;
+        }
+      }
       //   paws.style.fill = event.target.style.backgroundColor;
       //   eyes.style.fill = event.target.style.backgroundColor;
 
