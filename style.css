@@ -96,12 +96,47 @@ header {
   pointer-events: none;
   /* z-index: -1; */
 }
+
+.hat2{
+  position: absolute;
+  left: 9vw;
+  top: -4vw;
+  width: 17vw;
+  height: 17vw;
+  pointer-events: none;
+}
+
+.hat3{
+  position: absolute;
+  left: 9vw;
+  top: -4vw;
+  width: 15vw;
+  height: 17vw;
+  pointer-events: none;
+}
 .bow {
   position: absolute;
   left: 13vw;
   top: 10vw;
   width: 10vw;
   height: 17vw;
+  pointer-events: none;
+}
+
+.bow2{
+  position: absolute;
+  left: 11.7vw;
+  top: 13vw;
+  width: 12vw;
+  height: 14vw;
+  pointer-events: none;
+}
+.bow3{
+  position: absolute;
+  left: 12vw;
+  top: 14.3vw;
+  width: 12vw;
+  height: 8.5vw;
   pointer-events: none;
 }
 .glasses {
@@ -111,6 +146,24 @@ header {
   width: 13vw;
   height: 17vw;
   pointer-events: none;
+}
+
+.glasses2{
+  position: absolute;
+  left: 9.3vw;
+  top: 5vw;
+  width: 18vw;
+  height: 17vw;
+  pointer-events: none; 
+}
+
+.glasses3{
+  position: absolute;
+  left: 10.5vw;
+  top: 6vw;
+  width: 15vw;
+  height: 12vw;
+  pointer-events: none; 
 }
 #product-preview {
   position: absolute;
